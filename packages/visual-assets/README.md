@@ -1,6 +1,6 @@
 # Prodeko visual asset library
 
-**This package is still experimental**
+**This package is considered experimental until version v1.0.0 all changes may be breaking!**
 
 ## Usage
 

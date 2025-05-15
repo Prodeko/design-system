@@ -1,0 +1,10 @@
+{
+  "name": "prodeko-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "author": "Risto Virtaharju <rvirtaha@hotmail.com>",
+  "engines": {
+    "pnpm": ">=10.0.0"
+  }
+}

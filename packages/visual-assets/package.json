@@ -1,7 +1,6 @@
 {
   "name": "@prodeko/visual-assets",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
   "description": "Visual web assets of Prodeko",
   "author": "Risto Virtaharju <rvirtaha@hotmail.com>",
   "type": "module",
@@ -19,5 +18,12 @@
   },
   "devDependencies": {
     "svg-sprite": "^2.0.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prodeko/prodeko-design-system.git"
   }
 }

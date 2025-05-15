@@ -19,5 +19,12 @@
   },
   "devDependencies": {
     "svg-sprite": "^2.0.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prodeko/prodeko-design-system.git"
   }
 }

@@ -14,4 +14,21 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      # Runs release-please to determine if a release is needed and create a release PR
       - uses: googleapis/release-please-action@v4
+        id: release
+      # The logic below handles the github package registry publication
+      # the if statements ensure that a publication only occurs when a new release is created:
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-node@v4
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          node-version: 22
+          registry-url: https://npm.pkg.github.com/
+      - run: npm ci
+        if: ${{ steps.release.outputs.release_created }}
+      - run: npm publish --workspaces
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

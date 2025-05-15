@@ -15,5 +15,11 @@
   },
   "scripts": {
     "prepare": "husky"
-  }
+  },
+  "publishConfig": {
+    "@prodeko:registry": "https://npm.pkg.github.com/"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

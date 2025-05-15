@@ -1,0 +1,16 @@
+{
+    "packages": {
+        "packages/tailwind-plugin": {
+            "release-type": "node",
+            "extra-files": [
+                "packages/tailwind-plugin/README.md"
+            ]
+        },
+        "packages/visual-assets": {
+            "release-type": "node",
+            "extra-files": [
+                "packages/visual-assets/README.md"
+            ]
+        }
+    }
+}

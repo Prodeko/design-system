@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Prodeko/design-system/compare/visual-assets-v0.1.2...visual-assets-v0.1.3) (2025-05-15)
+
+
+### Features
+
+* **assets:** dummy commit trigger ci ([01cd808](https://github.com/Prodeko/design-system/commit/01cd808ff1d7fd40c91f3cda127f89ecbc1eb1df))
+
 ## [0.1.2](https://github.com/Prodeko/design-system/compare/visual-assets-v0.1.1...visual-assets-v0.1.2) (2025-05-15)
 
 

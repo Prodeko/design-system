@@ -1,10 +1,13 @@
 {
     "packages": {
         "packages/tailwind-plugin": {
+            "package-name": "tailwind-plugin",
+            "changelog-path": "CHANGELOG.md",
             "release-type": "node",
-            "extra-files": [
-                "packages/tailwind-plugin/README.md"
-            ]
+            "bump-minor-pre-major": true,
+            "bump-patch-for-minor-pre-major": true,
+            "draft": false,
+            "prerelease": false
         },
         "packages/visual-assets": {
             "release-type": "node",
@@ -12,5 +15,6 @@
                 "packages/visual-assets/README.md"
             ]
         }
-    }
+    },
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }

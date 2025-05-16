@@ -2,7 +2,8 @@
     "packages": {
         "packages/tailwind-plugin": {
             "package-name": "tailwind-plugin",
-            "changelog-path": "CHANGELOG.md",
+            "component": "tw",
+            "changelog-path": "packages/tailwind-plugin/CHANGELOG.md",
             "release-type": "node",
             "bump-minor-pre-major": true,
             "bump-patch-for-minor-pre-major": true,
@@ -11,7 +12,8 @@
         },
         "packages/visual-assets": {
             "package-name": "visual-assets",
-            "changelog-path": "CHANGELOG.md",
+            "component": "vis",
+            "changelog-path": "packages/visual-assets/CHANGELOG.md",
             "release-type": "node",
             "bump-minor-pre-major": true,
             "bump-patch-for-minor-pre-major": true,

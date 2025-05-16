@@ -14,7 +14,8 @@
     "dist/"
   ],
   "scripts": {
-    "build:sprites": "node scripts/build-sprites.js"
+    "build:sprites": "node scripts/build-sprites.js",
+    "postinstall": "cp -r dist/favicons $INIT_CWD/public && echo '*' >> $INIT_CWD/public/favicons/.gitignore"
   },
   "devDependencies": {
     "svg-sprite": "^2.0.4"

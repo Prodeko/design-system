@@ -1,0 +1,31 @@
+{
+  "name": "@prodeko/tailwind-theme",
+  "version": "1.1.0",
+  "main": "index.js",
+  "description": "Custom tailwindcss theme for Prodeko",
+  "author": "Risto Virtaharju <rvirtaha@hotmail.com>",
+  "peerDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "concurrently": "^9.1.2",
+    "husky": "^9.1.7",
+    "live-server": "^1.2.2",
+    "semantic-release": "^24.2.3",
+    "tailwindcss": "^3.4.17"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "dev:html": "live-server examples --watch examples,examples/dist",
+    "dev:tw": "tailwindcss --config examples/tailwind.config.js -i examples/index.css -o examples/dist/styles.css --watch",
+    "dev": "concurrently \"npm:dev:html\" \"npm:dev:tw\""
+  }
+}

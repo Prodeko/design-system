@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Prodeko/design-system/compare/vis-v0.1.2...vis-v0.1.3) (2025-06-28)
+
+
+### Features
+
+* **vis:** add install binary to copy favicons ([3ada543](https://github.com/Prodeko/design-system/commit/3ada54345f2661c6f10310f49dcd634263507467))
+
 ## [0.1.2](https://github.com/Prodeko/design-system/compare/vis-v0.1.1...vis-v0.1.2) (2025-06-28)
 
 

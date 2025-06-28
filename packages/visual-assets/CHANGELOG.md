@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Prodeko/design-system/compare/vis-v0.1.3...vis-v0.1.4) (2025-06-28)
+
+
+### Features
+
+* **vis:** add favicons ([fa04ece](https://github.com/Prodeko/design-system/commit/fa04ece980ec579439a3f05a5d444d3e302e1891))
+
 ## [0.1.3](https://github.com/Prodeko/design-system/compare/vis-v0.1.2...vis-v0.1.3) (2025-06-28)
 
 

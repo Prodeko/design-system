@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/Prodeko/design-system/compare/tw-v0.1.1...tw-v0.1.2) (2025-06-28)
+
+
+### Reverts
+
+* "chore: set package access to public" ([1b40f86](https://github.com/Prodeko/design-system/commit/1b40f86e23c823974621dbf20397f1c0ca997b2b))
+
 ## [0.1.1](https://github.com/Prodeko/design-system/compare/tw-v0.1.0...tw-v0.1.1) (2025-06-28)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Prodeko/design-system/compare/vis-v0.1.2...vis-v0.1.3) (2025-06-28)
+
+
+### Features
+
+* **vis:** another fake feat to trigger ci ([7c0f825](https://github.com/Prodeko/design-system/commit/7c0f825be33d658dbe8d3d55f076c742ef9cd0e4))
+
 ## [0.1.2](https://github.com/Prodeko/design-system/compare/vis-v0.1.1...vis-v0.1.2) (2025-06-28)
 
 

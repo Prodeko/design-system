@@ -8,6 +8,9 @@
     ".": "./index.js"
   },
   "main": "index.js",
+  "bin": {
+    "prodeko-install-favicons": "scripts/copy-favicons.js"
+  },
   "types": "index.d.ts",
   "files": [
     "index.js",

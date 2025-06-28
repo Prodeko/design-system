@@ -1,6 +1,6 @@
 {
     "name": "@prodeko/tailwind-theme",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "Custom tailwindcss theme for Prodeko",
     "author": "Risto Virtaharju <rvirtaha@hotmail.com>",
     "type": "module",

@@ -4,14 +4,47 @@
 
 This repository provides multiple packages to aid in creating good and consistent brand visuals for Prodeko.
 
-## Packages
+## Usage
 
 This monorepository exports the following packages:
 
 - [Tailwindcss plugin](./packages/tailwind-plugin/README.md)
 - [Visual asset library](./packages/visual-assets/README.md)
 
-For more information on installation and usage, see package-specific READMEs.
+The packages are distributed through github package registry. To use a package, you need to set up a github personal access token (classic). 
+
+1. Go to [github > settings > developer settings > personal access tokens > tokens (classic)](https://github.com/settings/tokens)
+2. Create a new personal classic token with the scope `read:packages`
+3. Create the .npmrc -file in your home folder so that it works accross all repositories.
+
+    The content of `~/.npmrc` should be:
+
+    ```text
+    @prodeko:registry=https://npm.pkg.github.com
+    //npm.pkg.github.com/:_authToken=yourpersonalaccesstokenkeepthissecure
+    ```
+
+4. Now you can install packages with `npm install @prodeko/packagename`
+5. To install a package in github actions, you need to set the environment variable `NODE_AUTH_TOKEN` to `secrets.GITHUB_TOKEN`
+
+    ```yml
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20.x'
+            registry-url: 'https://npm.pkg.github.com'
+            scope: '@prodeko'
+        - name: Install dependencies
+          run: npm ci
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+    ```
+
+6. For more information on how to use specific packages, see the package READMEs
 
 ## Development workflow and CICD
 

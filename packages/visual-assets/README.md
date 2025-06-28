@@ -4,8 +4,13 @@
 
 ## Usage
 
-```text
-npm install --save-dev git+ssh://git@github.com:prodeko/visual-assets#semver:latest
+```bash
+npm install @prodeko/visual-assets
+
+# If you want to use favicons, run the installation step. 
+# This will copy favicons to public/favicons folder in your project.
+# Alternatively, you can set the favicons via javascript with no copying.
+npx prodeko-install-favicons
 ```
 
 ```tsx

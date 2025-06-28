@@ -1,4 +1,16 @@
 declare module '*.svg' {
-  const src: string;
-  export default src;
+  const content: string;
+  export default content;
+}
+declare module '*.png' {
+  const content: string;
+  export default content;
+}
+declare module '*.ico' {
+  const content: string;
+  export default content;
+}
+declare module '*.webmanifest' {
+  const content: string;
+  export default content;
 }

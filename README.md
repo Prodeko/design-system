@@ -33,20 +33,20 @@ There is a git hook set up in this repository (husky), that automatically does c
 
 ### Release process and CI
 
-All changes should be developed in separate feature-branches. Direct pushing to main is disabled. Once a feature is ready, it can be [_squash-merged_](#why-squash-merge) to main via a pull-request. Notice that when squashing, you have to append all relevant commit messages to the body of the squash commit. Merging the code to main triggers the release-workflow. It uses Google's [release-please](htps://github.com/googleapis/release-please-action) to:
+All changes should be developed in separate feature-branches. Direct pushing to main is disabled. Once a feature is ready, it can be merged to main *via a pull-request*. Merging the code to main triggers the release-workflow. It uses Google's [release-please](htps://github.com/googleapis/release-please-action) to:
 
 - read commit messages
 - generate separate changelogs for every package
 - calculate version bumps for every package
 - create a release pull request
 
-Next, the pull request can be reviewed. Most importantly you should check that version bumps and changelogs are appropriate. You can optionally amend the pr with better changelogs.
+Next, the pull request can be reviewed. Most importantly you should check that version bumps and changelogs are appropriate. You can optionally add commits to the pr with better changelogs.
 
 Finally, the release PR is also merged to main. This triggers the release workflow again. Now the workflow sees that package versions have been updated and it creates new github releases for each changed package.
 
-### Why squash merge
+### Squashing commits
 
-The reason for preferring squash-merges in this repo can be found in [release-please documentation](https://github.com/googleapis/release-please). Most importantly, if your feature branch includes commits like this:
+Motivation for squashing merges can be found in [release-please documentation](https://github.com/googleapis/release-please). Most importantly, if your feature branch includes commits like this:
 
 ```text
 feat: add new feature

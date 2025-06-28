@@ -1,11 +1,25 @@
 {
     "name": "@prodeko/tailwind-theme",
     "version": "0.1.2",
-    "main": "index.js",
     "description": "Custom tailwindcss theme for Prodeko",
     "author": "Risto Virtaharju <rvirtaha@hotmail.com>",
+    "type": "module",
+    "exports": {
+        ".": "./index.js"
+    },
+    "main": "index.js",
+    "files": [
+        "index.js",
+        "font-faces.js"
+    ],
     "peerDependencies": {
         "tailwindcss": "^3.4.0"
     },
-    "private": true
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prodeko/prodeko-tailwind-plugin.git"
+    }
 }

@@ -1,3 +1,5 @@
+**!! All packages below version 1.0.0 are experimental and UNSTABLE and should not be used in production code !!**
+
 ![Prodeko logo](./docs/images/logo-text-blue.png)
 
 # Prodeko design system

@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "bin": {
-    "prodeko-install-favicons": "scripts/copy-favicons.js"
+    "prodeko-install-favicons": "scripts/install-favicons.js"
   },
   "types": "index.d.ts",
   "files": [

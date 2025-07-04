@@ -16,7 +16,7 @@
     "index.js",
     "index.d.ts",
     "dist/",
-    "scripts/install-favicons"
+    "scripts/install-favicons.js"
   ],
   "scripts": {
     "build:sprites": "node scripts/build-sprites.js",

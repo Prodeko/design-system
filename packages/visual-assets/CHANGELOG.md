@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/Prodeko/design-system/compare/vis-v0.1.5...vis-v0.1.6) (2025-07-04)
+
+
+### Bug Fixes
+
+* corrected bin entry script name ([18af6ac](https://github.com/Prodeko/design-system/commit/18af6acfbd5a6b77daa022cf8e5845999a1194aa))
+
 ## [0.1.5](https://github.com/Prodeko/design-system/compare/vis-v0.1.4...vis-v0.1.5) (2025-07-04)
 
 

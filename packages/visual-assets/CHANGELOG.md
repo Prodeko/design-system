@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/Prodeko/design-system/compare/vis-v0.1.4...vis-v0.1.5) (2025-07-04)
+
+
+### Bug Fixes
+
+* added install favicons to npm files ([562541a](https://github.com/Prodeko/design-system/commit/562541a5263ad00646c298727a55caf2fc53f3c1))
+
 ## [0.1.4](https://github.com/Prodeko/design-system/compare/vis-v0.1.3...vis-v0.1.4) (2025-07-04)
 
 

@@ -59,8 +59,9 @@ async function buildReactComponents(inputDir, outputDir) {
                 plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
                 svgoConfig: {
                     plugins: [
-                        { name: 'removeViewBox', active: false },
-                        { name: 'removeAttrs', params: { attrs: '(class|style)' } },
+                        'preset-default',
+                        'removeEditorsNSData',
+                        'removeXMLNS',
                         {
                             name: 'addAttributesToSVGElement',
                             params: { attributes: [{ fill: 'currentColor' }] }

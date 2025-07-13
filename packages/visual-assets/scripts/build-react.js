@@ -2,6 +2,7 @@
 import { transform } from '@svgr/core'
 import fs from 'fs/promises'
 import path from 'path'
+import babel from '@babel/core'
 
 const OUT_ROOT = 'dist'
 
@@ -10,6 +11,19 @@ function toPascalCase(name) {
     return name
         .replace(/[-_](.)/g, (_, c) => c.toUpperCase())
         .replace(/^\w/, (c) => c.toUpperCase())
+}
+
+/** Precompile JSX react components with babel to make package usage simpler */
+async function compileWithBabel(code) {
+    const result = await babel.transformAsync(code, {
+        presets: ['@babel/preset-react'],
+        plugins: [],
+        filename: 'file.js',
+        babelrc: false,
+        configFile: false,
+        compact: false,
+    })
+    return result.code
 }
 
 /** Builds React components from svgs */
@@ -37,7 +51,7 @@ async function buildReactComponents(inputDir, outputDir) {
 
         const rawSvg = await fs.readFile(svgPath, 'utf-8')
 
-        const componentCode = await transform(
+        const reactJsxCode = await transform(
             rawSvg,
             {
                 icon: true,
@@ -57,7 +71,8 @@ async function buildReactComponents(inputDir, outputDir) {
             { componentName }
         )
 
-        await fs.writeFile(outPath, componentCode)
+        const compiledJSCode = await compileWithBabel(reactJsxCode)
+        await fs.writeFile(outPath, compiledJSCode)
         exportLines.push(`export { default as ${componentName} } from './${baseName}.js'`)
         typedefLines.push(`\texport const ${componentName}: React.FC<React.SVGProps<SVGSVGElement>>`)
         console.log(`Created component ${componentName} to path ${outPath}`)

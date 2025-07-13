@@ -5,7 +5,9 @@
   "author": "Risto Virtaharju <rvirtaha@hotmail.com>",
   "type": "module",
   "exports": {
-    ".": "./index.js"
+    ".": "./index.js",
+    "./react/logos": "./dist/logos-react/index.js",
+    "./react/icons": "./dist/icons-react/index.js"
   },
   "main": "index.js",
   "bin": {
@@ -20,9 +22,14 @@
   ],
   "scripts": {
     "build:sprites": "node scripts/build-sprites.js",
-    "install:favicons": "cp -r dist/favicons $INIT_CWD/public"
+    "build:react": "node scripts/build-react.js",
+    "install:favicons": "cp -r dist/favicons $INIT_CWD/public",
+    "build": "npm run build:sprites && npm run build:react"
   },
   "devDependencies": {
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
     "svg-sprite": "^2.0.4"
   },
   "publishConfig": {

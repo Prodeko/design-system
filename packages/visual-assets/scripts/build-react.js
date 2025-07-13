@@ -55,7 +55,7 @@ async function buildReactComponents(inputDir, outputDir) {
             rawSvg,
             {
                 icon: true,
-                jsxRuntime: 'automatic',
+                jsxRuntime: 'classic',
                 plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
                 svgoConfig: {
                     plugins: [

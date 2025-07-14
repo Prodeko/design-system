@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/Prodeko/design-system/compare/vis-v0.1.7...vis-v0.1.8) (2025-07-14)
+
+
+### Bug Fixes
+
+* **vis:** fixed ts module resolution issue ([4d26f1b](https://github.com/Prodeko/design-system/commit/4d26f1bc42c4d552be7f940b5ebf390091eb0b7e))
+
 ## [0.1.7](https://github.com/Prodeko/design-system/compare/vis-v0.1.6...vis-v0.1.7) (2025-07-14)
 
 

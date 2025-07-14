@@ -27,7 +27,7 @@ async function compileWithBabel(code) {
 }
 
 /** Builds React components from svgs */
-async function buildReactComponents(inputDir, outputDir) {
+async function buildReactComponents(inputDir, outputDir, packageExportsPath) {
     console.log(`Processing directory ${inputDir}`)
     const files = await fs.readdir(inputDir)
 
@@ -36,7 +36,11 @@ async function buildReactComponents(inputDir, outputDir) {
 
     /** Lines to write into index.js and index.d.ts */
     const exportLines = []
-    const typedefLines = []
+    const typedefLines = [
+        '/// <reference types="react" />',
+        '',
+        `declare module '@prodeko/visual-assets/${packageExportsPath}' {`,
+    ]
 
     for (const file of files) {
         if (!file.endsWith('.svg')) {
@@ -82,32 +86,17 @@ async function buildReactComponents(inputDir, outputDir) {
         typedefLines.push(`\texport const ${componentName}: React.FC<React.SVGProps<SVGSVGElement>>`)
         console.log(`Created component ${componentName} to path ${outPath}`)
     }
+    typedefLines.push('}')
     await fs.writeFile(path.join(outputDir, 'index.js'), exportLines.join('\n'))
-    console.log(`Wrote index.js to ${outputDir}`)
-
-    return { typedefLines }
+    await fs.writeFile(path.join(outputDir, 'index.d.ts'), typedefLines.join('\n'))
+    console.log(`Wrote index.js, index.d.ts to ${outputDir}`)
 }
 
 async function run() {
-    const [icons, logos] = await Promise.all([
-        buildReactComponents('assets/icons', path.join(OUT_ROOT, 'icons-react')),
-        buildReactComponents('assets/logos', path.join(OUT_ROOT, 'logos-react'))
+    await Promise.all([
+        buildReactComponents('assets/icons', path.join(OUT_ROOT, 'icons-react'), 'react/icons'),
+        buildReactComponents('assets/logos', path.join(OUT_ROOT, 'logos-react'), 'react/logos')
     ])
-
-    const dtsLines = [
-        '/// <reference types="react" />',
-        '',
-        `declare module '@prodeko/visual-assets/react/icons' {`,
-        ...icons.typedefLines,
-        '}',
-        '',
-        `declare module '@prodeko/visual-assets/react/logos' {`,
-        ...logos.typedefLines,
-        '}',
-        ''
-    ]
-
-    await fs.writeFile('react-components.d.ts', dtsLines.join('\n'))
 }
 
 run()

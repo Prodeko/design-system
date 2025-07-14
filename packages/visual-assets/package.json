@@ -5,9 +5,18 @@
   "author": "Risto Virtaharju <rvirtaha@hotmail.com>",
   "type": "module",
   "exports": {
-    ".": "./index.js",
-    "./react/logos": "./dist/logos-react/index.js",
-    "./react/icons": "./dist/icons-react/index.js"
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./react/logos": {
+      "import": "./dist/logos-react/index.js",
+      "types": "./dist/logos-react/index.d.ts"
+    },
+    "./react/icons": {
+      "import": "./dist/icons-react/index.js",
+      "types": "./dist/icons-react/index.d.ts"
+    }
   },
   "main": "index.js",
   "bin": {

@@ -62,8 +62,10 @@ async function buildReactComponents(inputDir, outputDir) {
                         'preset-default',
                         'removeEditorsNSData',
                         'removeXMLNS',
+                        'removeStyleElement',
                         { name: 'removeViewBox', active: false }, // keep viewBox
                         { name: 'removeDimensions', active: true }, // allow styling with CSS
+                        { name: 'removeAttrs', params: { attrs: ['fill', 'stroke', 'style'] } },
                         {
                             name: 'addAttributesToSVGElement',
                             params: { attributes: [{ fill: 'currentColor' }] }

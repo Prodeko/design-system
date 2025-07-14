@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/Prodeko/design-system/compare/vis-v0.1.6...vis-v0.1.7) (2025-07-14)
+
+
+### Features
+
+* svgr compiled react icons ([#54](https://github.com/Prodeko/design-system/issues/54)) ([a4433ef](https://github.com/Prodeko/design-system/commit/a4433ef00c73b66e349cb035f906503772994485))
+
 ## [0.1.6](https://github.com/Prodeko/design-system/compare/vis-v0.1.5...vis-v0.1.6) (2025-07-04)
 
 

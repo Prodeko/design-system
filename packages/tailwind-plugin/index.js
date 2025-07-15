@@ -8,28 +8,32 @@ module.exports = plugin.withOptions(
             const fontUtils = {
                 // body: Raleway, normal case, normal spacing
                 '.font-normal': {
-                    fontFamily: theme('fontFamily.raleway'),
-                    fontWeight: theme('fontWeight.normal'),
-                    letterSpacing: '0em',
+                    'font-family': theme('fontFamily.raleway'),
+                    'font-weight': theme('fontWeight.normal'),
+                    'letter-spacing': '0em',
                 },
                 // headings: Raleway SemiBold, Kiikkilä Spacing ≈ 0.2em
                 '.font-heading': {
-                    fontFamily: theme('fontFamily.raleway'),
-                    fontWeight: theme('fontWeight.semibold'),
-                    letterSpacing: '0.2em',
+                    'font-family': theme('fontFamily.raleway'),
+                    'font-weight': theme('fontWeight.semibold'),
+                    'letter-spacing': '0.2em',
                 },
                 // logos: uppercase, Raleway ExtraBold, Kiikkilä Spacing ≈ 0.5em
                 '.font-logo': {
-                    textTransform: 'uppercase',
-                    fontFamily: theme('fontFamily.raleway'),
-                    fontWeight: theme('fontWeight.bold'),
-                    letterSpacing: '0.5em',
+                    'text-transform': 'uppercase',
+                    'font-family': theme('fontFamily.raleway'),
+                    'font-weight': theme('fontWeight.bold'),
+                    'letter-spacing': '0.5em',
                 },
             }
 
             addBase({
                 '@font-face': faces,
-                html: fontUtils['.font-normal'],
+                html: {
+                    'font-family': theme('fontFamily.raleway'),
+                    'font-weight': theme('fontWeight.normal'),
+                    'letter-spacing': '0em',
+                },
             })
 
             addUtilities(fontUtils, ['responsive', 'hover'])
@@ -38,7 +42,7 @@ module.exports = plugin.withOptions(
         theme: {
             extend: {
                 fontFamily: {
-                    raleway: ["Raleway", ...defaultTheme.fontFamily.sans],
+                    raleway: "Raleway",
                 },
                 colors: {
                     prodeko: {

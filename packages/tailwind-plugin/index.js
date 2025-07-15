@@ -1,6 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 const defaultTheme = require('tailwindcss/defaultTheme')
-const faces = require('./font-faces.js')
+const faces = require('./src/font-faces.js')
 
 module.exports = plugin.withOptions(
     () =>

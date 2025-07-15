@@ -10,7 +10,7 @@
     "main": "index.js",
     "files": [
         "index.js",
-        "font-faces.js"
+        "src"
     ],
     "peerDependencies": {
         "tailwindcss": "^3.4.0"

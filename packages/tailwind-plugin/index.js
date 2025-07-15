@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const faces = require('./src/font-faces.js')
+const cssColors = require('./src/color-variables.js')
 
 module.exports = plugin.withOptions(
     () =>
@@ -34,8 +35,8 @@ module.exports = plugin.withOptions(
                     'font-weight': theme('fontWeight.normal'),
                     'letter-spacing': '0em',
                 },
+                ...cssColors,
             })
-
             addUtilities(fontUtils, ['responsive', 'hover'])
         },
     () => ({
@@ -53,7 +54,65 @@ module.exports = plugin.withOptions(
                         DEFAULT: '#002e7d',
                         dark: '#002851',
                         black: '#000A14'
-                    }
+                    },
+
+                    background: 'hsl(var(--background))',
+                    foreground: 'hsl(var(--foreground))',
+                    card: {
+                        DEFAULT: 'hsl(var(--card))',
+                        foreground: 'hsl(var(--card-foreground))',
+                    },
+                    popover: {
+                        DEFAULT: 'hsl(var(--popover))',
+                        foreground: 'hsl(var(--popover-foreground))',
+                    },
+                    primary: {
+                        DEFAULT: 'hsl(var(--primary))',
+                        foreground: 'hsl(var(--primary-foreground))',
+                    },
+                    secondary: {
+                        DEFAULT: 'hsl(var(--secondary))',
+                        foreground: 'hsl(var(--secondary-foreground))',
+                    },
+                    muted: {
+                        DEFAULT: 'hsl(var(--muted))',
+                        foreground: 'hsl(var(--muted-foreground))',
+                    },
+                    accent: {
+                        DEFAULT: 'hsl(var(--accent))',
+                        foreground: 'hsl(var(--accent-foreground))',
+                    },
+                    destructive: 'hsl(var(--destructive))',
+                    border: 'hsl(var(--border))',
+                    input: 'hsl(var(--input))',
+                    ring: 'hsl(var(--ring))',
+
+                    // chart: {
+                    //     1: 'hsl(var(--chart-1))',
+                    //     2: 'hsl(var(--chart-2))',
+                    //     3: 'hsl(var(--chart-3))',
+                    //     4: 'hsl(var(--chart-4))',
+                    //     5: 'hsl(var(--chart-5))',
+                    // },
+                    // sidebar: {
+                    //     DEFAULT: 'hsl(var(--sidebar))',
+                    //     foreground: 'hsl(var(--sidebar-foreground))',
+                    //     primary: {
+                    //         DEFAULT: 'hsl(var(--sidebar-primary))',
+                    //         foreground: 'hsl(var(--sidebar-primary-foreground))',
+                    //     },
+                    //     accent: {
+                    //         DEFAULT: 'hsl(var(--sidebar-accent))',
+                    //         foreground: 'hsl(var(--sidebar-accent-foreground))',
+                    //     },
+                    //     border: 'hsl(var(--sidebar-border))',
+                    //     ring: 'hsl(var(--sidebar-ring))',
+                    // }
+                },
+                borderRadius: {
+                    lg: 'var(--radius)',
+                    md: 'calc(var(--radius) - 2px)',
+                    sm: 'calc(var(--radius) - 4px',
                 }
             }
         }

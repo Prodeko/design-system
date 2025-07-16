@@ -1,11 +1,11 @@
 const plugin = require('tailwindcss/plugin')
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 const faces = require('./src/font-faces.js')
 const cssColors = require('./src/color-variables.js')
 
 module.exports = plugin.withOptions(
     () =>
-        function ({ addBase, addUtilities, theme }) {
+        function ({ addBase, addUtilities, addVariant, theme }) {
             const fontUtils = {
                 // body: Raleway, normal case, normal spacing
                 '.font-normal': {
@@ -29,15 +29,49 @@ module.exports = plugin.withOptions(
             }
 
             addBase({
+                /**
+                 * Set up default fonts
+                 */
                 '@font-face': faces,
                 html: {
                     'font-family': theme('fontFamily.raleway'),
                     'font-weight': theme('fontWeight.normal'),
                     'letter-spacing': '0em',
                 },
+                /**
+                 * Set default background-color and text color
+                 */
+                body: {
+                    'background-color': 'hsl(var(--background))',
+                    'color': 'hsl(var(--foreground))',
+                },
+                /**
+                 * Makes sure all elements that have a border,
+                 * have the correct border-color.
+                 */
+                '*': {
+                    'border-color': 'hsl(var(--color-border) / var(--border-opacity))',
+                    'outline-color': 'hsl(var(--color-ring) / var(--outline-opacity))'
+                },
+                /**
+                 * Note that cssColors has keys :root and .dark 
+                 * so don't accidentally override them here.
+                 */
                 ...cssColors,
             })
+
+            /**
+             * font utilities
+             */
             addUtilities(fontUtils, ['responsive', 'hover'])
+
+            /**
+             * Defines the variant
+             *   @custom-variant dark(&:is(.dark *));
+             * as implemented in shadcn reference globals.css.
+             * This helps tailwind with dark mode compilation.
+             */
+            addVariant('dark', '&:is(.dark *)')
         },
     () => ({
         theme: {
@@ -87,32 +121,33 @@ module.exports = plugin.withOptions(
                     input: 'hsl(var(--input))',
                     ring: 'hsl(var(--ring))',
 
-                    // chart: {
-                    //     1: 'hsl(var(--chart-1))',
-                    //     2: 'hsl(var(--chart-2))',
-                    //     3: 'hsl(var(--chart-3))',
-                    //     4: 'hsl(var(--chart-4))',
-                    //     5: 'hsl(var(--chart-5))',
-                    // },
-                    // sidebar: {
-                    //     DEFAULT: 'hsl(var(--sidebar))',
-                    //     foreground: 'hsl(var(--sidebar-foreground))',
-                    //     primary: {
-                    //         DEFAULT: 'hsl(var(--sidebar-primary))',
-                    //         foreground: 'hsl(var(--sidebar-primary-foreground))',
-                    //     },
-                    //     accent: {
-                    //         DEFAULT: 'hsl(var(--sidebar-accent))',
-                    //         foreground: 'hsl(var(--sidebar-accent-foreground))',
-                    //     },
-                    //     border: 'hsl(var(--sidebar-border))',
-                    //     ring: 'hsl(var(--sidebar-ring))',
-                    // }
+                    chart: {
+                        1: 'hsl(var(--chart-1))',
+                        2: 'hsl(var(--chart-2))',
+                        3: 'hsl(var(--chart-3))',
+                        4: 'hsl(var(--chart-4))',
+                        5: 'hsl(var(--chart-5))',
+                    },
+                    sidebar: {
+                        DEFAULT: 'hsl(var(--sidebar))',
+                        foreground: 'hsl(var(--sidebar-foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--sidebar-primary))',
+                            foreground: 'hsl(var(--sidebar-primary-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--sidebar-accent))',
+                            foreground: 'hsl(var(--sidebar-accent-foreground))',
+                        },
+                        border: 'hsl(var(--sidebar-border))',
+                        ring: 'hsl(var(--sidebar-ring))',
+                    }
                 },
                 borderRadius: {
+                    xl: 'calc(var(--radius) + 4px)',
                     lg: 'var(--radius)',
                     md: 'calc(var(--radius) - 2px)',
-                    sm: 'calc(var(--radius) - 4px',
+                    sm: 'calc(var(--radius) - 4px)',
                 }
             }
         }

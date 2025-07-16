@@ -5,6 +5,8 @@
 const cssColors = {
     ':root': {
         '--radius': '0.5rem',
+        '--border-opacity': '1',
+        '--outline-opacity': '0.5',
 
         '--background': '0 0% 100%;',
         '--foreground': '222.2 84% 4.9%',
@@ -25,19 +27,20 @@ const cssColors = {
         '--input': '214.3 31.8% 91.4%',
         '--ring': '222.2 84% 4.9%',
 
-        // '--chart-1': 'oklch(0.646 0.222 41.116)',
-        // '--chart-2': 'oklch(0.6 0.118 184.704)',
-        // '--chart-3': 'oklch(0.398 0.07 227.392)',
-        // '--chart-4': 'oklch(0.828 0.189 84.429)',
-        // '--chart-5': 'oklch(0.769 0.188 70.08)',
-        // '--sidebar': 'oklch(0.985 0 0)',
-        // '--sidebar-foreground': 'oklch(0.145 0 0)',
-        // '--sidebar-primary': 'oklch(0.205 0 0)',
-        // '--sidebar-primary-foreground': 'oklch(0.985 0 0)',
-        // '--sidebar-accent': 'oklch(0.97 0 0)',
-        // '--sidebar-accent-foreground': 'oklch(0.205 0 0)',
-        // '--sidebar-border': 'oklch(0.922 0 0)',
-        // '--sidebar-ring': 'oklch(0.708 0 0)',
+        '--chart-1': '18.01 100% 48%',
+        '--chart-2': '174.71 100% 29%',
+        '--chart-3': '195.82 72% 23%',
+        '--chart-4': '43.66 100% 50%',
+        '--chart-5': '36.49 100% 50%',
+
+        '--sidebar': '210 40% 98%',
+        '--sidebar-foreground': '222.2 84% 4.9%',
+        '--sidebar-primary': '218 100% 25%',
+        '--sidebar-primary-foreground': '210 40% 98%',
+        '--sidebar-accent': '210 40% 96.1%',
+        '--sidebar-accent-foreground': '222.2 47.4% 11.2%',
+        '--sidebar-border': '214.3 31.8% 91.4%',
+        '--sidebar-ring': '222.2 84% 4.9%',
     },
 
     '.dark': {
@@ -60,19 +63,20 @@ const cssColors = {
         '--input': '217.2 32.6% 17.5%',
         '--ring': '212.7 26.8% 83.9%',
 
-        // '--chart-1': 'oklch(0.488 0.243 264.376)',
-        // '--chart-2': 'oklch(0.696 0.17 162.48)',
-        // '--chart-3': 'oklch(0.769 0.188 70.08)',
-        // '--chart-4': 'oklch(0.627 0.265 303.9)',
-        // '--chart-5': 'oklch(0.645 0.246 16.439)',
-        // '--sidebar': 'oklch(0.205 0 0)',
-        // '--sidebar-foreground': 'oklch(0.985 0 0)',
-        // '--sidebar-primary': 'oklch(0.488 0.243 264.376)',
-        // '--sidebar-primary-foreground': 'oklch(0.985 0 0)',
-        // '--sidebar-accent': 'oklch(0.269 0 0)',
-        // '--sidebar-accent-foreground': 'oklch(0.985 0 0)',
-        // '--sidebar-border': 'oklch(1 0 0 / 10 %)',
-        // '--sidebar-ring': 'oklch(0.556 0 0)',
+        '--chart-1': '18.01 100% 48%',
+        '--chart-2': '174.71 100% 29%',
+        '--chart-3': '195.82 72% 23%',
+        '--chart-4': '43.66 100% 50%',
+        '--chart-5': '36.49 100% 50%',
+
+        '--sidebar': '222.2 84% 4.9%',
+        '--sidebar-foreground': '210 40% 98%',
+        '--sidebar-primary': '218 100% 25%',
+        '--sidebar-primary-foreground': '222.2 84% 4.9%',
+        '--sidebar-accent': '217.2 32.6% 17.5%',
+        '--sidebar-accent-foreground': '210 40% 98%',
+        '--sidebar-border': '217.2 32.6% 17.5%',
+        '--sidebar-ring': '212.7 26.8% 83.9%',
     }
 }
 

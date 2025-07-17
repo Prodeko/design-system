@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.3](https://github.com/Prodeko/design-system/compare/tw-v0.1.2...tw-v0.1.3) (2025-07-17)
+
+
+### Features
+
+* shadcn theme ([#58](https://github.com/Prodeko/design-system/issues/58)) ([d6bca0d](https://github.com/Prodeko/design-system/commit/d6bca0dd987f89202dd7668e53e92a23ff585a4c))
+
+
+### Bug Fixes
+
+* **tw:** fix raleway default font ([9ae0c60](https://github.com/Prodeko/design-system/commit/9ae0c60f9c0475324c32ed6057727cdb6a04d199))
+
 ## [0.1.2](https://github.com/Prodeko/design-system/compare/tw-v0.1.1...tw-v0.1.2) (2025-06-28)
 
 

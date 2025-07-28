@@ -26,8 +26,19 @@ async function compileWithBabel(code) {
     return result.code
 }
 
-/** Builds React components from svgs */
-async function buildReactComponents(inputDir, outputDir, packageExportsPath) {
+/**
+ * @typedef {Object} config - Config object for buildReactComponents
+ * @property {boolean} icon - Set svgo icon? property. 
+ * Adds width: 1em height: 1em to generated React components css
+ */
+
+/** Builds React components from svgs
+ * @param {string} inputDir - Source directory of svgs
+ * @param {string} outputDir - Directory for React components
+ * @param {string} packageExportsPath - typescript module subpath
+ * @param {config} config 
+ */
+async function buildReactComponents(inputDir, outputDir, packageExportsPath, config = { icon: true }) {
     console.log(`Processing directory ${inputDir}`)
     const files = await fs.readdir(inputDir)
 
@@ -58,7 +69,7 @@ async function buildReactComponents(inputDir, outputDir, packageExportsPath) {
         const reactJsxCode = await transform(
             rawSvg,
             {
-                icon: true,
+                icon: config.icon,
                 jsxRuntime: 'classic',
                 plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
                 svgoConfig: {
@@ -94,8 +105,8 @@ async function buildReactComponents(inputDir, outputDir, packageExportsPath) {
 
 async function run() {
     await Promise.all([
-        buildReactComponents('assets/icons', path.join(OUT_ROOT, 'icons-react'), 'react/icons'),
-        buildReactComponents('assets/logos', path.join(OUT_ROOT, 'logos-react'), 'react/logos')
+        buildReactComponents('assets/icons', path.join(OUT_ROOT, 'icons-react'), 'react/icons', { icon: true }),
+        buildReactComponents('assets/logos', path.join(OUT_ROOT, 'logos-react'), 'react/logos', { icon: false })
     ])
 }
 

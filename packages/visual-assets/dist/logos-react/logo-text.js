@@ -2,9 +2,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import * as React from "react";
 const LogoText = props => /*#__PURE__*/React.createElement("svg", _extends({
   viewBox: "0 0 1217.955 338.184",
-  fill: "currentColor",
-  width: "1em",
-  height: "1em"
+  fill: "currentColor"
 }, props), /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("clipPath", {
   id: "a",
   clipPathUnits: "userSpaceOnUse"

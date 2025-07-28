@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/Prodeko/design-system/compare/vis-v0.1.8...vis-v0.1.9) (2025-07-28)
+
+
+### Bug Fixes
+
+* **vis:** fixed square logos issue ([2825c5b](https://github.com/Prodeko/design-system/commit/2825c5b84805568ea2d5480484bfbd2af8807791))
+
 ## [0.1.8](https://github.com/Prodeko/design-system/compare/vis-v0.1.7...vis-v0.1.8) (2025-07-14)
 
 
